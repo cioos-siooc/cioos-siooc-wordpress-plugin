@@ -1,0 +1,19 @@
+@media screen and (min-width: 1485px) {
+    .half-box-background {
+        background-color: #efefef;
+        border-left: 3px solid grey;
+        
+        position: absolute;
+        top: 0;
+        bottom: 25%;
+        left: 0%;
+        right: 5%;
+        
+        width: auto!important;
+        
+        margin: 0!important;
+        padding: 0!important;
+        
+        z-index: 0;
+    }
+}

@@ -1,0 +1,14 @@
+a.elementor-button-link{
+	width: 350px!important;
+}
+
+.elementor-button:hover{
+	background-color: #808080!important;
+}
+
+@media screen and (max-width: 380px) {
+	#cta-button {
+		width: 15em!important;
+		font-size: 16px;
+	}
+}
