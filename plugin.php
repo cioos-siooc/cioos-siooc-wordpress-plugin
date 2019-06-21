@@ -59,9 +59,11 @@ class Plugin {
 	 * @access public
 	 */
 	public function widget_styles() {
-		wp_register_style( 'CIOOS-plugin', plugins_url( '/assets/css/cta_widget.css', __FILE__ ) );
-		wp_register_style( 'CIOOS-plugin', plugins_url( '/assets/css/three_boxes_widget.css', __FILE__ ) );
-		wp_enqueue_style( 'CIOOS-plugin' );
+		wp_register_style( 'CIOOS-cta_widget', plugins_url( '/assets/css/cta_widget.css', __FILE__ ) );
+		wp_enqueue_style( 'CIOOS-cta_widget' );
+
+		wp_register_style( 'CIOOS-three_boxes_widget', plugins_url( '/assets/css/three_boxes_widget.css', __FILE__ ) );
+		wp_enqueue_style( 'CIOOS-three_boxes_widget' );
 	}
 
 	/**
