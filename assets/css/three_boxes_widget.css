@@ -1,8 +1,6 @@
 @media screen and (min-width: 1485px) {
     .half-box-background {
-        background-color: #efefef;
         border-left: 3px solid grey;
-        
         position: absolute;
         top: 0;
         bottom: 25%;
@@ -16,4 +14,15 @@
         
         z-index: 0;
     }
+}
+
+.elementor img.image-size {
+    height: 20em;
+}
+
+.elementor-widget-heading.elementor-widget-heading .elementor-heading-title.box-title {
+    color: #404041;
+    font-family: "Quicksand", Sans-serif;
+    font-weight: 300;
+    font-size: 2.8em;
 }

@@ -150,14 +150,74 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 			'image_1',
             [
                 'label' => __( 'Image 1', 'CIOOS-plugin'),
-                'type' => Controls_Manager::TEXT,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
 			]
-        );
+		);
+		$this->add_control(
+			'link_1',
+			[
+				'label' => __( 'Link 1', 'CIOOS-plugin' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'show_external' => true,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'image_2',
+            [
+                'label' => __( 'Image 2', 'CIOOS-plugin'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+		$this->add_control(
+			'link_2',
+			[
+				'label' => __( 'Link 2', 'CIOOS-plugin' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'show_external' => true,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'image_3',
+            [
+                'label' => __( 'Image 3', 'CIOOS-plugin'),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+		$this->add_control(
+			'link_3',
+			[
+				'label' => __( 'Link 3', 'CIOOS-plugin' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'show_external' => true,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+			]
+		);
         $this->end_controls_section();
 	}
 	
@@ -171,11 +231,97 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() { 
 		$settings = $this->get_settings_for_display();
-		$target_btn_left = $settings['button_left_link']['is_external'] ? ' target="_blank"' : '';
-		$target_btn_right = $settings['button_right_link']['is_external'] ? ' target="_blank"' : '';
+		$target_link_1 = $settings['link_1']['is_external'] ? ' target="_blank"' : '';
+		$target_link_2 = $settings['link_2']['is_external'] ? ' target="_blank"' : '';
+		$target_link_3 = $settings['link_3']['is_external'] ? ' target="_blank"' : '';
+		$nofollow_link_1 = $settings['link_1']['nofollow'] ? ' rel="nofollow"' : '';
+		$nofollow_link_2 = $settings['link_2']['nofollow'] ? ' rel="nofollow"' : '';
+		$nofollow_link_3 = $settings['link_3']['nofollow'] ? ' rel="nofollow"' : '';		
 		?>
-		<!-- insert html here -->
-		<?php
+		<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-element_type="section">
+			<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+					<div class="elementor-element elementor-column elementor-col-100 elementor-top-column" data-element_type="column">
+						<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-widget-wrap">
+								<div class="elementor-element half-box-background elementor-widget elementor-widget-html" style="background-color: <?php echo $settings['background_color']; ?>;" data-element_type="widget" data-widget_type="html.default">
+									<div class="elementor-widget-container">
+										<div></div>
+									</div>
+								</div>
+								<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-element_type="section">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-row">
+											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
+												<div class="elementor-column-wrap  elementor-element-populated">
+													<div class="elementor-widget-wrap">
+														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_left_text'], 'CIOOS-plugin'); ?></h3>
+															</div>
+														</div>
+														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+															<div class="elementor-widget-container">
+																<div>
+																	<a href="<?php echo __($settings['link_1']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
+																		<img src="<?php echo __($settings['image_1']['url'], 'CIOOS-plugin'); ?>" class="attachment-large size-large image-size" alt=""/>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
+												<div class="elementor-column-wrap  elementor-element-populated">
+													<div class="elementor-widget-wrap">
+														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_middle_text'], 'CIOOS-plugin'); ?></h3>
+															</div>
+														</div>
+														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+															<div class="elementor-widget-container">
+																<div>
+																	<a href="<?php echo __($settings['link_2']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_2) ?> <?php echo($nofollow_link_2)  ?>>
+																		<img src="<?php echo __($settings['image_2']['url'], 'CIOOS-plugin'); ?>" class="attachment-large size-large image-size" alt=""/>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
+												<div class="elementor-column-wrap  elementor-element-populated">
+													<div class="elementor-widget-wrap">
+														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_right_text'], 'CIOOS-plugin'); ?></h3>
+															</div>
+														</div>
+														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+															<div class="elementor-widget-container">
+																<div>
+																	<a href="<?php echo __($settings['link_3']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_3) ?> <?php echo($nofollow_link_3)  ?>>
+																		<img src="<?php echo __($settings['image_3']['url'], 'CIOOS-plugin'); ?>" class="image-size attachment-large size-large" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php
 	}
 
 	/**
