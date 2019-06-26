@@ -211,29 +211,31 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		$target_btn_left = $settings['button_left_link']['is_external'] ? ' target="_blank"' : '';
 		$target_btn_right = $settings['button_right_link']['is_external'] ? ' target="_blank"' : '';
+		$nofollow_link_1 = $settings['button_left_link']['nofollow'] ? ' rel="nofollow"' : '';
+		$nofollow_link_2 = $settings['button_right_link']['nofollow'] ? ' rel="nofollow"' : '';
 		?>
 		<div class="elementor-container elementor-column-gap-default">
 			<div class="elementor-row">
-				<div class="elementor-element elementor-element-8456769 elementor-column elementor-col-100 elementor-top-column" data-id="8456769" data-element_type="column">
+				<div class="elementor-element elementor-column elementor-col-100 elementor-top-column" data-element_type="column">
 					<div class="elementor-column-wrap  elementor-element-populated">
 						<div class="elementor-widget-wrap">
-							<div class="elementor-element elementor-element-c636c7e elementor-widget elementor-widget-text-editor" data-id="c636c7e" data-element_type="widget" data-widget_type="text-editor.default">
-								<div class="elementor-widget-container">
-									<div class="elementor-text-editor elementor-clearfix"><p>
+							<div class="elementor-element elementor-widget elementor-widget-text-editor" data-element_type="widget" data-widget_type="text-editor.default">
+								<div class="elementor-widget-container shrink-text-area">
+									<div class="elementor-text-editor justify-text elementor-clearfix"><p>
 										<?php echo __($settings['body_text'], 'CIOOS-plugin'); ?>
 									</p></div>
 								</div>
 							</div>
-							<section class="elementor-element elementor-element-17a7ece elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="17a7ece" data-element_type="section">
+							<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-element_type="section">
 								<div class="elementor-container elementor-column-gap-default">
 									<div class="elementor-row">
-										<div class="elementor-element elementor-element-0e5e18f elementor-column elementor-col-50 elementor-inner-column" data-id="0e5e18f" data-element_type="column">
+										<div class="elementor-element elementor-column elementor-col-50 elementor-inner-column" data-element_type="column">
 											<div class="elementor-column-wrap  elementor-element-populated">
 												<div class="elementor-widget-wrap">
-													<div class="elementor-element elementor-element-4583024 elementor-align-center elementor-widget elementor-widget-button" data-id="4583024" data-element_type="widget" data-widget_type="button.default">
+													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo __($settings['button_left_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_left)  ?> class="elementor-button-link elementor-button elementor-size-md" role="button" id="<?php echo __($settings['button_left_css_id'], 'CIOOS-plugin'); ?>">	
+																<a href="<?php echo __($settings['button_left_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_left)  ?> <?php echo($nofollow_link_1)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo __($settings['button_left_css_id'], 'CIOOS-plugin'); ?>">	
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
 																			<?php echo __($settings['button_left_text'], 'CIOOS-plugin'); ?>
@@ -246,13 +248,13 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 												</div>
 											</div>
 										</div>
-										<div class="elementor-element elementor-element-b943054 elementor-column elementor-col-50 elementor-inner-column" data-id="b943054" data-element_type="column">
+										<div class="elementor-element elementor-column elementor-col-50 elementor-inner-column" data-element_type="column">
 											<div class="elementor-column-wrap  elementor-element-populated">
 												<div class="elementor-widget-wrap">
-													<div class="elementor-element elementor-element-2283cf7 elementor-align-center elementor-widget elementor-widget-button" data-id="2283cf7" data-element_type="widget" data-widget_type="button.default">
+													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo __($settings['button_right_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_right) ?> class="elementor-button-link elementor-button elementor-size-md" role="button" id="<?php echo __($settings['button_right_css_id'], 'CIOOS-plugin'); ?>">
+																<a href="<?php echo __($settings['button_right_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_right) ?> <?php echo($nofollow_link_2)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo __($settings['button_right_css_id'], 'CIOOS-plugin'); ?>">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
 																			<?php echo __($settings['button_right_text'], 'CIOOS-plugin'); ?>
@@ -273,7 +275,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 				</div>
 			</div>
 		</div>
-		<?php
+	<?php
 	}
 
 	/**
