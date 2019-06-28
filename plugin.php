@@ -67,6 +67,9 @@ class Plugin {
 
 		wp_register_style( 'CIOOS-three_boxes_widget', plugins_url( '/assets/css/three_boxes_widget.css', __FILE__ ) );
 		wp_enqueue_style( 'CIOOS-three_boxes_widget' );
+
+		wp_register_style( 'CIOOS-mailchimp_widget', plugins_url( '/assets/css/mailchimp_widget.css', __FILE__ ) );
+		wp_enqueue_style( 'CIOOS-mailchimp_widget' );
 	}
 
 	/**
@@ -78,21 +81,37 @@ class Plugin {
 	 * @access private
 	 */
 	private function include_widgets_files() {
-		require_once( __DIR__ . '/widgets/cta_widget.php' );
-		require_once( __DIR__ . '/widgets/three_boxes_widget.php' );
+	}
+
+	/**
+	 * Register WordPres Widgets
+	 *
+	 * Register new widgets.
+	 *
+	 * @since 0.1.0
+	 * @access public
+	 */
+	public function register_wordpress_widgets() {
+		// Its is now safe to include Widgets files
+		require_once( __DIR__ . '/widgets/mailchimp_widget.php' );
+
+		// Register Widgets
+		register_widget('CIOOS\Widgets\mailchimp_widget');
 	}
 
 	/**
 	 * Register Widgets
 	 *
-	 * Register new Elementor widgets.
+	 * Register new widgets.
 	 *
 	 * @since 0.1.0
 	 * @access public
 	 */
-	public function register_widgets() {
+	public function register_elementor_widgets() {
 		// Its is now safe to include Widgets files
-		$this->include_widgets_files();
+		require_once( __DIR__ . '/widgets/cta_widget.php' );
+		require_once( __DIR__ . '/widgets/three_boxes_widget.php' );
+		// $this->include_widgets_files();
 
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Call_To_Action_Widget() );
@@ -134,7 +153,8 @@ class Plugin {
 		// add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
 		// Register widgets
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
+		add_action( 'widgets_init', [ $this, 'register_wordpress_widgets' ] );
+		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_elementor_widgets' ] );
 
 		// Register Widgets styles
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles' ] );
