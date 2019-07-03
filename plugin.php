@@ -70,6 +70,9 @@ class Plugin {
 
 		wp_register_style( 'CIOOS-mailchimp_widget', plugins_url( '/assets/css/mailchimp_widget.css', __FILE__ ) );
 		wp_enqueue_style( 'CIOOS-mailchimp_widget' );
+
+		wp_register_style( 'CIOOS-two_panel_box_widget', plugins_url( '/assets/css/two_panel_box_widget.css', __FILE__ ) );
+		wp_enqueue_style( 'CIOOS-two_panel_box_widget' );
 	}
 
 	/**
@@ -111,11 +114,13 @@ class Plugin {
 		// Its is now safe to include Widgets files
 		require_once( __DIR__ . '/widgets/cta_widget.php' );
 		require_once( __DIR__ . '/widgets/three_boxes_widget.php' );
+		require_once( __DIR__ . '/widgets/two_panel_box_widget.php' );
 		// $this->include_widgets_files();
 
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Call_To_Action_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Three_Boxes_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Two_Panel_Box_Widget() );
 	}
 
 
