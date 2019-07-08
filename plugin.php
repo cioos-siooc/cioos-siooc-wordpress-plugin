@@ -73,6 +73,9 @@ class Plugin {
 
 		wp_register_style( 'CIOOS-two_panel_box_widget', plugins_url( '/assets/css/two_panel_box_widget.css', __FILE__ ) );
 		wp_enqueue_style( 'CIOOS-two_panel_box_widget' );
+
+		wp_register_style( 'CIOOS-offset_background_widget', plugins_url( '/assets/css/offset_background_widget.css', __FILE__ ) );
+		wp_enqueue_style( 'CIOOS-offset_background_widget' );
 	}
 
 	/**
@@ -115,12 +118,14 @@ class Plugin {
 		require_once( __DIR__ . '/widgets/cta_widget.php' );
 		require_once( __DIR__ . '/widgets/three_boxes_widget.php' );
 		require_once( __DIR__ . '/widgets/two_panel_box_widget.php' );
+		require_once( __DIR__ . '/widgets/offset_background_widget.php' );
 		// $this->include_widgets_files();
 
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Call_To_Action_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Three_Boxes_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Two_Panel_Box_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Offset_Background_Widget() );
 	}
 
 
