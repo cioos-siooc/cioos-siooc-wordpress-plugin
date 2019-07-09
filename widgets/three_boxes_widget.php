@@ -43,7 +43,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 	 *
 	 * @return string Widget icon.
 	 */
-	public function get_icon() { return 'fa fa-birthday-cake'; }
+	public function get_icon() { return 'fa fa-cubes'; }
 
 	/**
 	 * Get widget categories.
