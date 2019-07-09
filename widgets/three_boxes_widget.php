@@ -161,7 +161,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Link 1', 'CIOOS-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -185,7 +185,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Link 2', 'CIOOS-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -209,7 +209,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Link 3', 'CIOOS-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -238,83 +238,71 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$nofollow_link_2 = $settings['link_2']['nofollow'] ? ' rel="nofollow"' : '';
 		$nofollow_link_3 = $settings['link_3']['nofollow'] ? ' rel="nofollow"' : '';		
 		?>
-		<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-element_type="section">
+		<div class="elementor-element half-box-background elementor-widget elementor-widget-html" style="background-color: <?php echo $settings['background_color']; ?>;" data-element_type="widget" data-widget_type="html.default">
+			<div class="elementor-widget-container">
+				<div></div>
+			</div>
+		</div>
+		<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-element_type="section">
 			<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
-					<div class="elementor-element elementor-column elementor-col-100 elementor-top-column" data-element_type="column">
+					<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
 						<div class="elementor-column-wrap  elementor-element-populated">
 							<div class="elementor-widget-wrap">
-								<div class="elementor-element half-box-background elementor-widget elementor-widget-html" style="background-color: <?php echo $settings['background_color']; ?>;" data-element_type="widget" data-widget_type="html.default">
+								<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
 									<div class="elementor-widget-container">
-										<div></div>
+										<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo $settings['title_left_text']; ?></h3>
 									</div>
 								</div>
-								<section class="elementor-element elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-element_type="section">
-									<div class="elementor-container elementor-column-gap-default">
-										<div class="elementor-row">
-											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
-												<div class="elementor-column-wrap  elementor-element-populated">
-													<div class="elementor-widget-wrap">
-														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
-															<div class="elementor-widget-container">
-																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_left_text'], 'CIOOS-plugin'); ?></h3>
-															</div>
-														</div>
-														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
-															<div class="elementor-widget-container">
-																<div>
-																	<a href="<?php echo __($settings['link_1']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
-																		<img src="<?php echo __($settings['image_1']['url'], 'CIOOS-plugin'); ?>" class="attachment-large size-large image-size" alt=""/>
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+									<div class="elementor-widget-container">
+										<a href="<?php $settings['link_1']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
+											<div class="test">
+												<img src="<?php echo $settings['image_1']['url']; ?>" class="attachment-large size-large image-size" alt=""/>
 											</div>
-											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
-												<div class="elementor-column-wrap  elementor-element-populated">
-													<div class="elementor-widget-wrap">
-														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
-															<div class="elementor-widget-container">
-																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_middle_text'], 'CIOOS-plugin'); ?></h3>
-															</div>
-														</div>
-														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
-															<div class="elementor-widget-container">
-																<div>
-																	<a href="<?php echo __($settings['link_2']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_2) ?> <?php echo($nofollow_link_2)  ?>>
-																		<img src="<?php echo __($settings['image_2']['url'], 'CIOOS-plugin'); ?>" class="attachment-large size-large image-size" alt=""/>
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
-												<div class="elementor-column-wrap  elementor-element-populated">
-													<div class="elementor-widget-wrap">
-														<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
-															<div class="elementor-widget-container">
-																<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo __($settings['title_right_text'], 'CIOOS-plugin'); ?></h3>
-															</div>
-														</div>
-														<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
-															<div class="elementor-widget-container">
-																<div>
-																	<a href="<?php echo __($settings['link_3']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link_3) ?> <?php echo($nofollow_link_3)  ?>>
-																		<img src="<?php echo __($settings['image_3']['url'], 'CIOOS-plugin'); ?>" class="image-size attachment-large size-large" alt="" />
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+										</a>
 									</div>
-								</section>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
+						<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-widget-wrap">
+								<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-widget-container">
+										<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo $settings['title_middle_text']; ?></h3>
+									</div>
+								</div>
+								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+									<div class="elementor-widget-container">
+										<a href="<?php echo $settings['link_2']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_2) ?> <?php echo($nofollow_link_2)  ?>>
+											<div class="test">
+												<img src="<?php echo $settings['image_2']['url']; ?>" class="attachment-large size-large image-size" alt=""/>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-column elementor-col-33 elementor-inner-column" data-element_type="column">
+						<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-widget-wrap">
+								<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-widget-container">
+										<h3 class="elementor-heading-title elementor-size-large box-title"><?php echo $settings['title_right_text']; ?></h3>
+									</div>
+								</div>
+								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+									<div class="elementor-widget-container">
+										<a href="<?php echo $settings['link_3']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_3) ?> <?php echo($nofollow_link_3)  ?>>
+											<div class="test">	
+												<img src="<?php echo $settings['image_3']['url']; ?>" class="image-size attachment-large size-large" alt="" />
+											</div>
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

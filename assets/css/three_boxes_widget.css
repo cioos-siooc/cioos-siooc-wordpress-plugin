@@ -16,7 +16,18 @@
     }
 }
 
-.elementor img.image-size {
+.elementor img.image-size{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    height: 100%;
+}
+
+.test {
+    position: relative;
+    overflow: hidden;
+    width: 23em;
     height: 20em;
 }
 

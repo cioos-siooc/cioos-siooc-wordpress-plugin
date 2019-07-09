@@ -119,7 +119,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'default' => [
 					'url' => '',
 					'is_external' => true,
@@ -173,7 +173,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'default' => [
 					'url' => '',
 					'is_external' => true,
@@ -222,7 +222,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 							<div class="elementor-element elementor-widget elementor-widget-text-editor" data-element_type="widget" data-widget_type="text-editor.default">
 								<div class="elementor-widget-container shrink-text-area">
 									<div class="elementor-text-editor justify-text elementor-clearfix"><p>
-										<?php echo __($settings['body_text'], 'CIOOS-plugin'); ?>
+										<?php echo $settings['body_text']; ?>
 									</p></div>
 								</div>
 							</div>
@@ -235,10 +235,10 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo __($settings['button_left_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_left)  ?> <?php echo($nofollow_link_1)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo __($settings['button_left_css_id'], 'CIOOS-plugin'); ?>">	
+																<a href="<?php echo $settings['button_left_link']['url']; ?>" <?php echo($target_btn_left)  ?> <?php echo($nofollow_link_1)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_left_css_id']; ?>">	
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
-																			<?php echo __($settings['button_left_text'], 'CIOOS-plugin'); ?>
+																			<?php echo $settings['button_left_text']; ?>
 																		</span>
 																	</span>
 																</a>
@@ -254,10 +254,10 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo __($settings['button_right_link']['url'], 'CIOOS-plugin'); ?>" <?php echo($target_btn_right) ?> <?php echo($nofollow_link_2)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo __($settings['button_right_css_id'], 'CIOOS-plugin'); ?>">
+																<a href="<?php echo $settings['button_right_link']['url']; ?>" <?php echo($target_btn_right) ?> <?php echo($nofollow_link_2)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_right_css_id']; ?>">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
-																			<?php echo __($settings['button_right_text'], 'CIOOS-plugin'); ?>
+																			<?php echo $settings['button_right_text']; ?>
 																		</span>
 																	</span>
 																</a>

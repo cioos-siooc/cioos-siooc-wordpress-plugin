@@ -136,7 +136,7 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Link', 'CIOOS-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'CIOOS-plugin' ),
+				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -169,15 +169,15 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
 						<div class="elementor-widget-wrap">
 							<div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
 								<div class="elementor-widget-container">   
-									<a href="<?php echo __($settings['link']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link)  ?> <?php echo($nofollow_link)  ?>>
-										<h2 class="elementor-heading-title elementor-size-default dark-heading-title"><?php echo __($settings['text_title'], 'CIOOS-plugin'); ?>
+									<a href="<?php echo $settings['link']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link)  ?> <?php echo($nofollow_link)  ?>>
+										<h2 class="elementor-heading-title elementor-size-default dark-heading-title"><?php echo $settings['text_title']; ?>
 									</a>
 								</div>
 							</div>
 							<div class="elementor-element elementor-widget elementor-widget-text-editor" data-element_type="widget" data-widget_type="text-editor.default">
 								<div class="elementor-widget-container">
 									<div class="elementor-text-editor elementor-clearfix">
-										<p><?php echo __( $settings['body_text'], 'CIOOS-plugin')?></p>
+										<p><?php echo $settings['body_text']?></p>
 									</div>
 								</div>
 							</div>
@@ -190,8 +190,8 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
 							<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
 								<div class="elementor-widget-container">
 									<div class="elementor-image">
-										<a href="<?php echo __($settings['link']['url'], 'CIOOS-plugin'); ?>" data-elementor-open-lightbox="" <?php echo($target_link)  ?> <?php echo($nofollow_link)  ?> >
-											<img src="<?php echo __($settings['image']['url'], 'CIOOS-plugin'); ?>" class="attachment-full size-full" alt="" />
+										<a href="<?php echo $settings['link']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link)  ?> <?php echo($nofollow_link)  ?> >
+											<img src="<?php echo $settings['image']['url']; ?>" class="attachment-full size-full" alt="" />
 										</a>
 									</div>
 								</div>
