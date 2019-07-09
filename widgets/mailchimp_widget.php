@@ -11,10 +11,10 @@ class mailchimp_widget extends \WP_Widget {
             'mailchimp_widget', 
             
             // Widget name will appear in UI
-            __('Mailchimp Widget', 'cioos-plugin'), 
+            __('Mailchimp Widget', 'cioos-siooc-wordpress-plugin'), 
             
             // Widget description
-            array( 'description' => __( 'Widget to display the mailchimp subscription form', 'cioos-plugin' ), ) 
+            array( 'description' => __( 'Widget to display the mailchimp subscription form', 'cioos-siooc-wordpress-plugin' ), ) 
         );
     }
     
@@ -83,12 +83,12 @@ class mailchimp_widget extends \WP_Widget {
         if ( isset( $instance[ 'api_key' ] ) ) {
             $api_key = $instance[ 'api_key' ];
         } else {
-            $api_key = __( 'API key', 'cioos-plugin' );
+            $api_key = __( 'API key', 'cioos-siooc-wordpress-plugin' );
         }
         // Widget admin form
         ?>
         <p>
-        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php __( 'API Key:', 'cioos-plugin' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php __( 'API Key:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" />
         </p>
         <?php 

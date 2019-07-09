@@ -30,7 +30,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 	 *
 	 * @return string Widget title.
 	 */
-	public function get_title() { return __('Call to Action Widget', 'cioos-plugin'); }
+	public function get_title() { return __('Call to Action Widget', 'cioos-siooc-wordpress-plugin'); }
 
 	/**
 	 * Get widget icon.
@@ -73,19 +73,19 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_body',
             [
-                'label' => __( 'Body Text', 'CIOOS-plugin' )
+                'label' => __( 'Body Text', 'cioos-siooc-wordpress-plugin' )
             ]
         );
         $this->add_control(
             'body_text',
             [
-                'label' => __( 'Body Text', 'CIOOS-plugin'),
+                'label' => __( 'Body Text', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXTAREA,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'placeholder' => __( 'Enter your text', 'CIOOS-plugin' ),
-                'default' => __( 'Enter your text', 'CIOOS-plugin' )
+                'placeholder' => __( 'Enter your text', 'cioos-siooc-wordpress-plugin' ),
+                'default' => __( 'Enter your text', 'cioos-siooc-wordpress-plugin' )
             ]
         );
         $this->end_controls_section();
@@ -96,25 +96,25 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_button_left',
             [
-                'label' => __('Left Button', 'CIOOS-plugin')
+                'label' => __('Left Button', 'cioos-siooc-wordpress-plugin')
             ]
         );
         $this->add_control(
             'button_left_text',
             [
-                'label' => __( 'Text', 'CIOOS-plugin'),
+                'label' => __( 'Text', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+                'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
             ]
         );
 		$this->add_control(
 			'button_left_link',
 			[
-				'label' => __( 'Link', 'CIOOS-plugin' ),
+				'label' => __( 'Link', 'cioos-siooc-wordpress-plugin' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
@@ -130,15 +130,15 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'button_left_css_id',
 			[
-				'label' => __( 'Button ID', 'CIOOS-plugin' ),
+				'label' => __( 'Button ID', 'cioos-siooc-wordpress-plugin' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
 				'default' => '',
-				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'CIOOS-plugin' ),
+				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'cioos-siooc-wordpress-plugin' ),
 				'label_block' => false,
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'CIOOS-plugin' ),
+				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'cioos-siooc-wordpress-plugin' ),
 				'separator' => 'before',
 			]
 		);
@@ -150,25 +150,25 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_button_right',
             [
-                'label' => __('Right Button', 'CIOOS-plugin')
+                'label' => __('Right Button', 'cioos-siooc-wordpress-plugin')
             ]
         );
         $this->add_control(
             'button_right_text',
             [
-                'label' => __( 'Text', 'CIOOS-plugin'),
+                'label' => __( 'Text', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+                'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
             ]
         );
 		$this->add_control(
 			'button_right_link',
 			[
-				'label' => __( 'Link', 'CIOOS-plugin' ),
+				'label' => __( 'Link', 'cioos-siooc-wordpress-plugin' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
@@ -184,15 +184,15 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'button_right_css_id',
 			[
-				'label' => __( 'Button ID', 'CIOOS-plugin' ),
+				'label' => __( 'Button ID', 'cioos-siooc-wordpress-plugin' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
 				'default' => '',
-				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'CIOOS-plugin' ),
+				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'cioos-siooc-wordpress-plugin' ),
 				'label_block' => false,
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'CIOOS-plugin' ),
+				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'cioos-siooc-wordpress-plugin' ),
 				'separator' => 'before',
 			]
 		);

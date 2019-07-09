@@ -47,7 +47,7 @@ class Plugin {
 	//  */
 	// public function widget_scripts() {
 	// 	// Just loading an example JavaScript file, this isn't used
-	// 	wp_register_script( 'CIOOS-plugin', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+	// 	wp_register_script( 'cioos-siooc-wordpress-plugin', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
 	// }
 
 	/**

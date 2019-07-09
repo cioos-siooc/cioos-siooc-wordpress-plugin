@@ -30,7 +30,7 @@ class Offset_Background_Widget extends \Elementor\Widget_Base {
 	 *
 	 * @return string Widget title.
 	 */
-	public function get_title() { return __('Offset Background Widget', 'cioos-plugin'); }
+	public function get_title() { return __('Offset Background Widget', 'cioos-siooc-wordpress-plugin'); }
 
 	/**
 	 * Get widget icon.

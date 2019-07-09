@@ -31,7 +31,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 	 *
 	 * @return string Widget title.
 	 */
-	public function get_title() { return __('Three Boxes Widget', 'cioos-plugin'); }
+	public function get_title() { return __('Three Boxes Widget', 'cioos-siooc-wordpress-plugin'); }
 
 	/**
 	 * Get widget icon.
@@ -74,13 +74,13 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'background',
             [
-                'label' => __('Background', 'CIOOS-plugin')
+                'label' => __('Background', 'cioos-siooc-wordpress-plugin')
             ]
 		);
 		$this->add_control(
 			'background_color',
             [
-                'label' => __( 'Background Color', 'CIOOS-plugin'),
+                'label' => __( 'Background Color', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::COLOR,
                 'scheme' => [
 					'type' => Scheme_color::get_type(),
@@ -96,43 +96,43 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'titles',
             [
-                'label' => __('Titles', 'CIOOS-plugin')
+                'label' => __('Titles', 'cioos-siooc-wordpress-plugin')
             ]
 		);
 		$this->add_control(
 		 	'title_left_text',
             [
-                'label' => __( 'Text Title Left', 'CIOOS-plugin'),
+                'label' => __( 'Text Title Left', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+                'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
 			]
 		);
 		$this->add_control(
 			'title_middle_text',
             [
-                'label' => __( 'Text Title Middle', 'CIOOS-plugin'),
+                'label' => __( 'Text Title Middle', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+                'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
 			]
 		);
 		$this->add_control(
 			'title_right_text',
             [
-                'label' => __( 'Text Title Right', 'CIOOS-plugin'),
+                'label' => __( 'Text Title Right', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => __( 'Click here', 'CIOOS-plugin' ),
-                'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+                'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+                'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
 			]
         );
         $this->end_controls_section();
@@ -143,13 +143,13 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_images_links',
             [
-				'label' => __('Images/Links', 'CIOOS-plugin'),
+				'label' => __('Images/Links', 'cioos-siooc-wordpress-plugin'),
             ]
 		);
 		$this->add_control(
 			'image_1',
             [
-                'label' => __( 'Image 1', 'CIOOS-plugin'),
+                'label' => __( 'Image 1', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -159,7 +159,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'link_1',
 			[
-				'label' => __( 'Link 1', 'CIOOS-plugin' ),
+				'label' => __( 'Link 1', 'cioos-siooc-wordpress-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
@@ -173,7 +173,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'image_2',
             [
-                'label' => __( 'Image 2', 'CIOOS-plugin'),
+                'label' => __( 'Image 2', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -183,7 +183,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'link_2',
 			[
-				'label' => __( 'Link 2', 'CIOOS-plugin' ),
+				'label' => __( 'Link 2', 'cioos-siooc-wordpress-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
@@ -197,7 +197,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'image_3',
             [
-                'label' => __( 'Image 3', 'CIOOS-plugin'),
+                'label' => __( 'Image 3', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -207,7 +207,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'link_3',
 			[
-				'label' => __( 'Link 3', 'CIOOS-plugin' ),
+				'label' => __( 'Link 3', 'cioos-siooc-wordpress-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'placeholder' => 'https://your-link.com',
 				'show_external' => true,

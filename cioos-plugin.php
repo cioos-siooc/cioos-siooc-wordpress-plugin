@@ -5,7 +5,8 @@ Description: Custom widgets for the CIOOS National and RA sites
 Version: 0.1.0
 Author: OGSL
 Author URI: https://ogsl.ca/
-Text Domain: CIOOS-plugin
+Text Domain: cioos-siooc-wordpress-plugin
+Domain Path: /languages
 */
 namespace CIOOS;
 
@@ -70,7 +71,7 @@ final class CIOOS_plugin {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'CIOOS-plugin' );
+		load_plugin_textdomain( 'cioos-siooc-wordpress-plugin', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
     }
     
     /**
@@ -119,9 +120,9 @@ final class CIOOS_plugin {
 		}
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'CIOOS-plugin' ),
-			'<strong>' . esc_html__( 'CIOOS Plugin', 'CIOOS-plugin' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'CIOOS-plugin' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'cioos-siooc-wordpress-plugin' ),
+			'<strong>' . esc_html__( 'CIOOS Plugin', 'cioos-siooc-wordpress-plugin' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'cioos-siooc-wordpress-plugin' ) . '</strong>'
 		);
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
 	}
@@ -140,9 +141,9 @@ final class CIOOS_plugin {
 		}
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'CIOOS-plugin' ),
-			'<strong>' . esc_html__( 'CIOOS Plugin', 'CIOOS-plugin' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'CIOOS-plugin' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'cioos-siooc-wordpress-plugin' ),
+			'<strong>' . esc_html__( 'CIOOS Plugin', 'cioos-siooc-wordpress-plugin' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'cioos-siooc-wordpress-plugin' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -162,9 +163,9 @@ final class CIOOS_plugin {
 		}
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'CIOOS-plugin' ),
-			'<strong>' . esc_html__( 'CIOOS Plugin', 'CIOOS-plugin' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'CIOOS-plugin' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'cioos-siooc-wordpress-plugin' ),
+			'<strong>' . esc_html__( 'CIOOS Plugin', 'cioos-siooc-wordpress-plugin' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'cioos-siooc-wordpress-plugin' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );

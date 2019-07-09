@@ -30,7 +30,7 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
 	 *
 	 * @return string Widget title.
 	 */
-	public function get_title() { return __('Two Panel Box Widget', 'cioos-plugin'); }
+	public function get_title() { return __('Two Panel Box Widget', 'cioos-siooc-wordpress-plugin'); }
 
 	/**
 	 * Get widget icon.
@@ -73,37 +73,37 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'text_panel',
             [
-                'label' => __('Text Panel', 'CIOOS-plugin')
+                'label' => __('Text Panel', 'cioos-siooc-wordpress-plugin')
             ]
         );
         $this->add_control(
             'text_title',
            [
-               'label' => __( 'Title', 'CIOOS-plugin'),
+               'label' => __( 'Title', 'cioos-siooc-wordpress-plugin'),
                'type' => Controls_Manager::TEXT,
                'dynamic' => [
                    'active' => true,
                ],
-               'default' => __( 'Click here', 'CIOOS-plugin' ),
-               'placeholder' => __( 'Click here', 'CIOOS-plugin' ),
+               'default' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
+               'placeholder' => __( 'Click here', 'cioos-siooc-wordpress-plugin' ),
            ]
         );
         $this->add_control(
 			'body_text',
 			[
-				'label' => __( 'Body Text', 'CIOOS-plugin' ),
+				'label' => __( 'Body Text', 'cioos-siooc-wordpress-plugin' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => __( 'Enter Your Text', 'CIOOS-plugin' ),
-				'placeholder' => __( 'Enter Your Text', 'CIOOS-plugin' ),
+				'default' => __( 'Enter Your Text', 'cioos-siooc-wordpress-plugin' ),
+				'placeholder' => __( 'Enter Your Text', 'cioos-siooc-wordpress-plugin' ),
 			]
 		);
 		$this->add_control(
 			'text_side',
             [
-                'label' => __( 'Text Side ', 'CIOOS-plugin'),
+                'label' => __( 'Text Side ', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Left', 'CIOOS-plugin'),
-                'label_off' => __('Right', 'CIOOS-plugin'),
+                'label_on' => __('Left', 'cioos-siooc-wordpress-plugin'),
+                'label_off' => __('Right', 'cioos-siooc-wordpress-plugin'),
                 'return_value' => 'left',
                 'default' => 'left',
                 
@@ -118,13 +118,13 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_image_link_panel',
             [
-				'label' => __('Image/Link Panel', 'CIOOS-plugin'),
+				'label' => __('Image/Link Panel', 'cioos-siooc-wordpress-plugin'),
             ]
 		);
 		$this->add_control(
 			'image',
             [
-                'label' => __( 'Image', 'CIOOS-plugin'),
+                'label' => __( 'Image', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -134,7 +134,7 @@ class Two_Panel_Box_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'CIOOS-plugin' ),
+				'label' => __( 'Link', 'cioos-siooc-wordpress-plugin' ),
 				'type' => \Elementor\Controls_Manager::URL,
 				'placeholder' => 'https://your-link.com',
 				'show_external' => true,
