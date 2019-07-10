@@ -28,10 +28,10 @@ class mailchimp_widget extends \WP_Widget {
         // if ( ! empty( $title ) )
         //     echo $args['before_title'] . $title . $args['after_title'];
         ?>
-        <h3 class="footer-widget-title"><span>SUBSCRIBE TO CIOOS VIA EMAIL</span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
+        <h3 class="footer-widget-title"><span> <?php _e( 'SUBSCRIBE TO CIOOS VIA EMAIL', 'cioos-siooc-wordpress-plugin' ); ?></span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
         <style type="text/css">
-            #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+            #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
             /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
             We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         </style>
@@ -39,19 +39,19 @@ class mailchimp_widget extends \WP_Widget {
             <form action="<?php echo($api_key); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
                 <div id="mc_embed_signup_scroll">
                     <div class="mc-field-group input-group clearfix">
-                        <label>I am interested in: </label>
+                        <label><?php _e('I am interested in:', 'cioos-siooc-wordpress-plugin'); ?> </label>
                         <div class="block_1">
                             <ul>
-                                <li><input type="checkbox" value="1" name="group[3249][1]" id="mce-group[3249]-3249-0"><label for="mce-group[3249]-3249-0">General news</label></li>
-                                <li><input type="checkbox" value="2" name="group[3249][2]" id="mce-group[3249]-3249-1"><label for="mce-group[3249]-3249-1">Physical data</label></li>
-                                <li><input type="checkbox" value="4" name="group[3249][4]" id="mce-group[3249]-3249-2"><label for="mce-group[3249]-3249-2">Geochemical data</label></li>
+                                <li><input type="checkbox" value="1" name="group[3249][1]" id="mce-group[3249]-3249-0"><label for="mce-group[3249]-3249-0"><?php _e('General news', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="2" name="group[3249][2]" id="mce-group[3249]-3249-1"><label for="mce-group[3249]-3249-1"><?php _e('Physical data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="4" name="group[3249][4]" id="mce-group[3249]-3249-2"><label for="mce-group[3249]-3249-2"><?php _e('Geochemical data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
                             </ul>
                         </div>
                         <div class="block_2">
                             <ul>
-                                <li><input type="checkbox" value="8" name="group[3249][8]" id="mce-group[3249]-3249-3"><label for="mce-group[3249]-3249-3">Biological data</label></li>
-                                <li><input type="checkbox" value="16" name="group[3249][16]" id="mce-group[3249]-3249-4"><label for="mce-group[3249]-3249-4">Sociological data</label></li>
-                                <li><input type="checkbox" value="32" name="group[3249][32]" id="mce-group[3249]-3249-5"><label for="mce-group[3249]-3249-5">Cross-sector data</label></li>
+                                <li><input type="checkbox" value="8" name="group[3249][8]" id="mce-group[3249]-3249-3"><label for="mce-group[3249]-3249-3"><?php _e('Biological data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="16" name="group[3249][16]" id="mce-group[3249]-3249-4"><label for="mce-group[3249]-3249-4"><?php _e('Sociological data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="32" name="group[3249][32]" id="mce-group[3249]-3249-5"><label for="mce-group[3249]-3249-5"><?php _e('Cross-sector data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
                             </ul>
                         </div>
                     </div>
@@ -62,9 +62,9 @@ class mailchimp_widget extends \WP_Widget {
                     <div class="subcribe_container">
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" tabindex="-1" value=""></div>
                         <div class="mc-field-group email">
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="<?php _e('Email Address', 'cioos-siooc-wordpress-plugin'); ?>">
                         </div>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    <div class="clear"><input type="submit" value="<?php _e('Subscribe', 'cioos-siooc-wordpress-plugin'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                     </div>
                 </div>
             </form>
