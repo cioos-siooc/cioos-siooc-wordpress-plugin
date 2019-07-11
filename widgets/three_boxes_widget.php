@@ -257,7 +257,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
 									<div class="elementor-widget-container">
 										<a href="<?php $settings['link_1']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
-											<div class="test">
+											<div class="box">
 												<img src="<?php echo $settings['image_1']['url']; ?>" class="attachment-large size-large image-size" alt=""/>
 											</div>
 										</a>
@@ -277,7 +277,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
 									<div class="elementor-widget-container">
 										<a href="<?php echo $settings['link_2']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_2) ?> <?php echo($nofollow_link_2)  ?>>
-											<div class="test">
+											<div class="box">
 												<img src="<?php echo $settings['image_2']['url']; ?>" class="attachment-large size-large image-size" alt=""/>
 											</div>
 										</a>
@@ -297,7 +297,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
 									<div class="elementor-widget-container">
 										<a href="<?php echo $settings['link_3']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_3) ?> <?php echo($nofollow_link_3)  ?>>
-											<div class="test">	
+											<div class="box">	
 												<img src="<?php echo $settings['image_3']['url']; ?>" class="image-size attachment-large size-large" alt="" />
 											</div>
 										</a>

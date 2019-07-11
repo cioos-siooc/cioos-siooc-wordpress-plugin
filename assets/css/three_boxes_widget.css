@@ -24,12 +24,20 @@
     height: 100%;
 }
 
-.test {
+.box {
     position: relative;
     overflow: hidden;
     width: 23em;
     height: 20em;
 }
+
+@media screen and (max-width: 350px){
+    .box {
+        width: 15em;
+        height: 12em;
+    }    
+}
+
 
 .elementor-widget-heading.elementor-widget-heading .elementor-heading-title.box-title {
     color: #404041;
