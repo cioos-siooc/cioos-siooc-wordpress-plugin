@@ -28,7 +28,7 @@ class mailchimp_widget extends \WP_Widget {
         // if ( ! empty( $title ) )
         //     echo $args['before_title'] . $title . $args['after_title'];
         ?>
-        <h3 class="footer-widget-title"><span> <?php print(apply_filters( 'widget_text', 'SUBSCRIBE TO CIOOS VIA EMAIL' )); ?></span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
+        <h3 class="footer-widget-title"><span> <?php print(apply_filters( 'widget_title',  $instance['title'] )); ?></span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
         <style type="text/css">
             #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -42,16 +42,16 @@ class mailchimp_widget extends \WP_Widget {
                         <label><?php _e('I am interested in:', 'cioos-siooc-wordpress-plugin'); ?> </label>
                         <div class="block_1">
                             <ul>
-                                <li><input type="checkbox" value="1" name="group[3249][1]" id="mce-group[3249]-3249-0"><label for="mce-group[3249]-3249-0"><?php print(apply_filters( 'widget_text', 'General news')); ?></label></li>
-                                <li><input type="checkbox" value="2" name="group[3249][2]" id="mce-group[3249]-3249-1"><label for="mce-group[3249]-3249-1"><?php print(apply_filters( 'widget_text', 'Physical data')); ?></label></li>
-                                <li><input type="checkbox" value="4" name="group[3249][4]" id="mce-group[3249]-3249-2"><label for="mce-group[3249]-3249-2"><?php print(apply_filters( 'widget_text', 'Geochemical data')); ?></label></li>
+                                <li><input type="checkbox" value="1" name="group[3249][1]" id="mce-group[3249]-3249-0"><label for="mce-group[3249]-3249-0"><?php _e('General news', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="2" name="group[3249][2]" id="mce-group[3249]-3249-1"><label for="mce-group[3249]-3249-1"><?php _e('Physical data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="4" name="group[3249][4]" id="mce-group[3249]-3249-2"><label for="mce-group[3249]-3249-2"><?php _e('Geochemical data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
                             </ul>
                         </div>
                         <div class="block_2">
                             <ul>
-                                <li><input type="checkbox" value="8" name="group[3249][8]" id="mce-group[3249]-3249-3"><label for="mce-group[3249]-3249-3"><?php print(apply_filters( 'widget_text', 'Biological data')); ?></label></li>
-                                <li><input type="checkbox" value="16" name="group[3249][16]" id="mce-group[3249]-3249-4"><label for="mce-group[3249]-3249-4"><?php print(apply_filters( 'widget_text', 'Sociological data')); ?></label></li>
-                                <li><input type="checkbox" value="32" name="group[3249][32]" id="mce-group[3249]-3249-5"><label for="mce-group[3249]-3249-5"><?php print(apply_filters( 'widget_text', 'Cross-sector data')); ?></label></li>
+                                <li><input type="checkbox" value="8" name="group[3249][8]" id="mce-group[3249]-3249-3"><label for="mce-group[3249]-3249-3"><?php _e('Biological data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="16" name="group[3249][16]" id="mce-group[3249]-3249-4"><label for="mce-group[3249]-3249-4"><?php _e('Sociological data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
+                                <li><input type="checkbox" value="32" name="group[3249][32]" id="mce-group[3249]-3249-5"><label for="mce-group[3249]-3249-5"><?php _e('Cross-sector data', 'cioos-siooc-wordpress-plugin'); ?></label></li>
                             </ul>
                         </div>
                     </div>
@@ -62,9 +62,9 @@ class mailchimp_widget extends \WP_Widget {
                     <div class="subcribe_container">
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" tabindex="-1" value=""></div>
                         <div class="mc-field-group email">
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="<?php print(apply_filters( 'widget_text', 'Email Address')); ?>">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="<?php _e('Email Address', 'cioos-siooc-wordpress-plugin'); ?>">
                         </div>
-                    <div class="clear"><input type="submit" value="<?php print(apply_filters( 'widget_text', 'Subscribe')); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    <div class="clear"><input type="submit" value="<?php _e('Subscribe', 'cioos-siooc-wordpress-plugin'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                     </div>
                 </div>
             </form>
@@ -85,11 +85,22 @@ class mailchimp_widget extends \WP_Widget {
         } else {
             $api_key = __( 'API key', 'cioos-siooc-wordpress-plugin' );
         }
+
+        if ( isset( $instance[ 'title' ] ) ) {
+            $mc_title = $instance[ 'title' ];
+        } else {
+            $mc_title = __( 'Title', 'cioos-siooc-wordpress-plugin' );
+        }
+
         // Widget admin form
         ?>
         <p>
-        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php __( 'API Key:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
-        <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" />
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $mc_title ); ?>" title="This is a placeholder to generate a 'Widget Title' for polylang line in [Languages &gt; String Translations]" />
+        </p>
+        <p>
+        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'API Key:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
+        <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" title="" />
         </p>
         <?php 
     }
@@ -98,6 +109,7 @@ class mailchimp_widget extends \WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['api_key'] = ( ! empty( $new_instance['api_key'] ) ) ? strip_tags( $new_instance['api_key'] ) : '';
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : 'SUBSCRIBE TO CIOOS VIA EMAIL';
         return $instance;
     }
 } // Class wpb_widget ends here
