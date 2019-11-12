@@ -142,6 +142,38 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 				'separator' => 'before',
 			]
 		);
+		$this->add_control(
+			'button_left_link_color',
+			[
+				'label' => __( 'Link Color', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#ffffff',
+			]
+		);
+		$this->add_control(
+			'button_left_link_color_hover',
+			[
+				'label' => __( 'Link Color (Hover)', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#ffffff',
+			]
+		);
+		$this->add_control(
+			'button_left_background_color',
+			[
+				'label' => __( 'Background Color', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#00adef',
+			]
+		);
+		$this->add_control(
+			'button_left_background_color_hover',
+			[
+				'label' => __( 'Background Color (Hover)', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#1e4659',
+			]
+		);
         $this->end_controls_section();
 
         // 
@@ -196,6 +228,38 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 				'separator' => 'before',
 			]
 		);
+		$this->add_control(
+			'button_right_link_color',
+			[
+				'label' => __( 'Link Color', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#ffffff',
+			]
+		);
+		$this->add_control(
+			'button_right_link_color_hover',
+			[
+				'label' => __( 'Link Color (Hover)', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#ffffff',
+			]
+		);
+		$this->add_control(
+			'button_right_background_color',
+			[
+				'label' => __( 'Background Color', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#00adef',
+			]
+		);
+		$this->add_control(
+			'button_right_background_color_hover',
+			[
+				'label' => __( 'Background Color (Hover)', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#1e4659',
+			]
+		);
         $this->end_controls_section();
 	}
 	
@@ -209,10 +273,12 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() { 
 		$settings = $this->get_settings_for_display();
-		$target_btn_left = $settings['button_left_link']['is_external'] ? ' target="_blank"' : '';
+		$target_btn_left  = $settings['button_left_link']['is_external'] ? ' target="_blank"' : '';
 		$target_btn_right = $settings['button_right_link']['is_external'] ? ' target="_blank"' : '';
 		$nofollow_link_1 = $settings['button_left_link']['nofollow'] ? ' rel="nofollow"' : '';
 		$nofollow_link_2 = $settings['button_right_link']['nofollow'] ? ' rel="nofollow"' : '';
+		$css_btn_left  = sprintf("color: %s; background-color: %s;", $settings['button_left_link_color'], $settings['button_left_background_color']);
+		$css_btn_right = sprintf("color: %s; background-color: %s;", $settings['button_right_link_color'], $settings['button_right_background_color']);
 		?>
 		<div class="elementor-container elementor-column-gap-default">
 			<div class="elementor-row">
@@ -235,7 +301,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo $settings['button_left_link']['url']; ?>" <?php echo($target_btn_left)  ?> <?php echo($nofollow_link_1)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_left_css_id']; ?>">	
+																<a href="<?php echo $settings['button_left_link']['url']; ?>" <?php echo($target_btn_left)  ?> <?php echo($nofollow_link_1)  ?> style="<?php print($css_btn_left); ?>" class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_left_css_id']; ?>">	
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
 																			<?php echo $settings['button_left_text']; ?>
@@ -254,7 +320,7 @@ class Call_To_Action_Widget extends \Elementor\Widget_Base {
 													<div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
-																<a href="<?php echo $settings['button_right_link']['url']; ?>" <?php echo($target_btn_right) ?> <?php echo($nofollow_link_2)  ?> class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_right_css_id']; ?>">
+																<a href="<?php echo $settings['button_right_link']['url']; ?>" <?php echo($target_btn_right) ?> <?php echo($nofollow_link_2)  ?> style="<?php print($css_btn_right); ?>" class="elementor-button-link elementor-button elementor-size-md cta-button" role="button" id="<?php echo $settings['button_right_css_id']; ?>">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">
 																			<?php echo $settings['button_right_text']; ?>
