@@ -3,7 +3,7 @@ namespace CIOOS\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_color;
+use Elementor\Core\Schemes;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -83,8 +83,8 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
                 'label' => __( 'Background Color', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::COLOR,
                 'scheme' => [
-					'type' => Scheme_color::get_type(),
-					'value' => Scheme_color::COLOR_1,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_1,
                 ],
 			]
         );
