@@ -2,7 +2,7 @@
 /*
 Plugin Name: CIOOS Plugin
 Description: Custom widgets for the CIOOS National and RA sites
-Version: 0.1.0
+Version: 0.1.1
 Author: OGSL
 Author URI: https://ogsl.ca/
 Text Domain: cioos-siooc-wordpress-plugin
