@@ -256,7 +256,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
 								</div>
 								<div class="elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
 									<div class="elementor-widget-container">
-										<a href="<?php $settings['link_1']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
+										<a href="<?php echo $settings['link_1']['url']; ?>" data-elementor-open-lightbox="" <?php echo($target_link_1)  ?> <?php echo($nofollow_link_1)  ?> >
 											<div class="box">
 												<img src="<?php echo $settings['image_1']['url']; ?>" class="attachment-large size-large image-size" alt=""/>
 											</div>
