@@ -17,7 +17,7 @@ class mailchimp_widget extends \WP_Widget {
             array( 'description' => __( 'Widget to display the mailchimp subscription form', 'cioos-siooc-wordpress-plugin' ), ) 
         );
     }
-    
+
     // Creating widget front-end
     
     public function widget( $args, $instance ) {
@@ -28,7 +28,7 @@ class mailchimp_widget extends \WP_Widget {
         // if ( ! empty( $title ) )
         //     echo $args['before_title'] . $title . $args['after_title'];
         ?>
-        <h3 class="footer-widget-title"><span> <?php _e( 'SUBSCRIBE TO CIOOS VIA EMAIL', 'cioos-siooc-wordpress-plugin' ); ?></span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
+        <h3 class="footer-widget-title"><span> <?php print(apply_filters( 'widget_title',  $instance['title'] )); ?></span></h3><div class="textwidget custom-html-widget"><!-- Begin Mailchimp Signup Form -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
         <style type="text/css">
             #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -85,11 +85,22 @@ class mailchimp_widget extends \WP_Widget {
         } else {
             $api_key = __( 'API key', 'cioos-siooc-wordpress-plugin' );
         }
+
+        if ( isset( $instance[ 'title' ] ) ) {
+            $mc_title = $instance[ 'title' ];
+        } else {
+            $mc_title = __( 'Title', 'cioos-siooc-wordpress-plugin' );
+        }
+
         // Widget admin form
         ?>
         <p>
-        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php __( 'API Key:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
-        <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" />
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $mc_title ); ?>" title="This is a placeholder to generate a 'Widget Title' for polylang line in [Languages &gt; String Translations]" />
+        </p>
+        <p>
+        <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'API Key:', 'cioos-siooc-wordpress-plugin' ); ?></label> 
+        <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" title="" />
         </p>
         <?php 
     }
@@ -98,6 +109,7 @@ class mailchimp_widget extends \WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['api_key'] = ( ! empty( $new_instance['api_key'] ) ) ? strip_tags( $new_instance['api_key'] ) : '';
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : 'SUBSCRIBE TO CIOOS VIA EMAIL';
         return $instance;
     }
 } // Class wpb_widget ends here
