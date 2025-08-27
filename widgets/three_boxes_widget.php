@@ -3,7 +3,6 @@ namespace CIOOS\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
