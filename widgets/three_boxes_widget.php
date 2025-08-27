@@ -82,7 +82,7 @@ class Three_Boxes_Widget extends \Elementor\Widget_Base {
                 'label' => __( 'Background Color', 'cioos-siooc-wordpress-plugin'),
                 'type' => Controls_Manager::COLOR,
 				'global' => [
-+					'default' => Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
++					'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 +				],
 
 			]
